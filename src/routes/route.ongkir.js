@@ -30,10 +30,10 @@ router.get('/shipping/:origin/:destination/:weight/:courier', (req, res) => {
   const param = req.params;
   axios
     .post('/cost', {
-      origin: param.asal,
-      destination: param.tujuan,
-      weight: param.berat,
-      courier: param.kurir,
+      origin: param.origin,
+      destination: param.destination,
+      weight: param.weight,
+      courier: param.courier,
     })
     .then((response) => res.json(response.data))
     .catch((err) => res.send(err));

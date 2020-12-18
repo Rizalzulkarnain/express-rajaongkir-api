@@ -5,14 +5,7 @@ const compression = require('compression');
 const logger = require('morgan');
 
 module.exports = (app) => {
-  app.use(
-    cors({
-      origin: '*',
-      methods: '*',
-      allowedHeaders: '*',
-      exposedHeaders: '*',
-    })
-  );
+  app.use(cors());
   app.use(express.json());
   app.use(compression({ level: 9, strategy: 4 }));
 
